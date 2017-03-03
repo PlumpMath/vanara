@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E231E464-432C-4F4E-A44E-71B6F189826E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vanara.PInvoke.Security</RootNamespace>
+    <AssemblyName>Vanara.PInvoke.Security</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Adding a custom constant will auto-magically append a comma and space to the pre-built constants.    -->
+    <!-- Move the comma delimiter to the end of each constant and remove the trailing comma when we're done.  -->
+    <DefineConstants Condition=" !$(DefineConstants.Contains(', NET')) ">$(DefineConstants)$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", "")), </DefineConstants>
+    <DefineConstants Condition=" $(DefineConstants.Contains(', NET')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(", NET"))))$(TargetFrameworkVersion.Replace("v", "NET").Replace(".", "")), </DefineConstants>
+    <DefineConstants Condition=" $(TargetFrameworkVersion.Replace('v', '')) &gt;= 2.0 ">$(DefineConstants)NET_20_OR_GREATER, </DefineConstants>
+    <DefineConstants Condition=" $(TargetFrameworkVersion.Replace('v', '')) &gt;= 3.5 ">$(DefineConstants)NET_35_OR_GREATER, </DefineConstants>
+    <DefineConstants Condition=" $(TargetFrameworkVersion.Replace('v', '')) &gt;= 4.0 ">$(DefineConstants)NET_40_OR_GREATER, </DefineConstants>
+    <DefineConstants Condition=" $(TargetFrameworkVersion.Replace('v', '')) &gt;= 4.5 ">$(DefineConstants)NET_45_OR_GREATER</DefineConstants>
+    <DefineConstants Condition=" $(DefineConstants.EndsWith(', ')) ">$(DefineConstants.Remove($(DefineConstants.LastIndexOf(", "))))</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AclUI.cs" />
+    <Compile Include="AdvApi32\AdvApi32.cs" />
+    <Compile Include="AdvApi32\AdvApi32_Lsa.cs" />
+    <Compile Include="AdvApi32\AdvApi32_Registry.cs" />
+    <Compile Include="AdvApi32\AdvApi32_Token.cs" />
+    <Compile Include="AdvApi32\PSID.cs" />
+    <Compile Include="Authz.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vanara.Core\Vanara.Core.csproj">
+      <Project>{038afeb3-9ce4-4ab8-b0de-4126c5f1d595}</Project>
+      <Name>Vanara.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="package.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

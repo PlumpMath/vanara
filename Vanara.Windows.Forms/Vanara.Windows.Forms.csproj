@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72DCDE39-23B6-4F5B-A8AA-404C5A07F3C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vanara.Windows.Forms</RootNamespace>
+    <AssemblyName>Vanara.Windows.Forms</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TASKDIALOG_EMULATE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;TASKDIALOG_EMULATE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ButtonStateManager.cs" />
+    <Compile Include="CustomDrawBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Diagnostics\SystemShutdown.cs" />
+    <Compile Include="Extensions\ActiveDirectoryExtension.cs" />
+    <Compile Include="Extensions\FileInfoExtension.cs" />
+    <Compile Include="Extensions\ReflectionExtension.cs" />
+    <Compile Include="IPAddressBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IPAddressBox.Designer.cs">
+      <DependentUpon>IPAddressBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Shell\ShellImageList.cs" />
+    <Compile Include="VistaControlExtender.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="VisualTheme.cs" />
+    <None Include="Extensions\RegistryExtension.cs" />
+    <Compile Include="Extensions\SecureStringExt.cs" />
+    <None Include="Extensions\ServiceControllerExtension.cs" />
+    <Compile Include="ControlImage.cs" />
+    <Compile Include="Network\NetworkListManager.cs" />
+    <Compile Include="Network\NetworkProfile.cs" />
+    <Compile Include="Security\AccessControl\AccCtrlHelper.cs" />
+    <Compile Include="Security\AccessControl\Editor\AccessControlEditorDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Security\AccountUtils.cs" />
+    <Compile Include="Drawing\BufferedPaint.cs" />
+    <None Include="Drawing\BufferedPainter.cs" />
+    <Compile Include="Extensions\ButtonExtension.cs" />
+    <Compile Include="CollapsiblePanelHeader.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\ComboBoxExtension.cs" />
+    <Compile Include="Extensions\ControlExtension.cs" />
+    <Compile Include="Extensions\ControlExtensionGDI.cs" />
+    <Compile Include="CredentialsDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\CursorExtension.cs" />
+    <Compile Include="CustomComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\BetterExpandableObjectConverter.cs" />
+    <Compile Include="CollapsiblePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommandLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\CollapsiblePanelDesigner.cs" />
+    <Compile Include="Design\FlagEnumEditor.cs" />
+    <Compile Include="DesktopWindowManager.cs" />
+    <Compile Include="DisabledItemComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmbeddedContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmulateExpInfoButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EmulateTaskDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Design\GenericDesigner.cs" />
+    <Compile Include="EnumComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FolderBrowserDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GlassExtenderProvider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\GraphicsExtension.cs" />
+    <Compile Include="Extensions\IconExtension.cs" />
+    <Compile Include="Extensions\ImageListExtension.cs" />
+    <Compile Include="InputDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\ListViewExtensions.cs" />
+    <Compile Include="Extensions\MapWindowPoints.cs" />
+    <Compile Include="Resources\ResourceFile.cs" />
+    <Compile Include="Extensions\ProcessExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyStore.cs" />
+    <Compile Include="Security\AuthenticationBuffer.cs" />
+    <Compile Include="Security\AccessControl\LocalSecurityAuthority.cs" />
+    <Compile Include="Security\AccessControl\Privilege.cs" />
+    <Compile Include="Security\AccessControl\Editor\Providers.cs" />
+    <Compile Include="Security\AccessControl\Editor\SecuredObject.cs" />
+    <Compile Include="Security\AccessControl\Editor\SecurityInfoImpl.cs" />
+    <Compile Include="Security\AccessControl\PrivilegedCodeBlock.cs" />
+    <Compile Include="Security\UAC.cs" />
+    <Compile Include="Security\Principal\WindowsImpersonatedIdentity.cs" />
+    <Compile Include="Shell\ShellFileInfo.cs" />
+    <Compile Include="Shell\ShellItem.cs" />
+    <Compile Include="Shell\ShellLink.cs" />
+    <Compile Include="SplitButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Styles.cs" />
+    <Compile Include="Shell\TaskbarList.cs" />
+    <Compile Include="TaskDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Design\CommandLinkDesigner.cs" />
+    <Compile Include="Extensions\TextBoxExtension.cs" />
+    <Compile Include="ThemedImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThemedLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThemedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThemedTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ActivationContext.cs" />
+    <Compile Include="Extensions\TreeViewExtension.cs" />
+    <Compile Include="VistaButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Extensions\VisualStylesRendererExtension.cs" />
+    <Compile Include="Extensions\VisualStylesRendererExtensionGDI.cs" />
+    <None Include="WinInetHelper.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CollapsiblePanel.resx">
+      <DependentUpon>CollapsiblePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowHovered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallSecurity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SmallSecurityDisabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandoButtonV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GlassExtenderProvider.bmp" />
+    <Content Include="Security\AccessControl\Editor\AccessControlEditorDialog.bmp" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

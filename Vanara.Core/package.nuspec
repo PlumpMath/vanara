@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package>
+  <metadata>
+    <!--*-->
+    <id>$id$</id>
+    <!--*-->
+    <version>$version$</version>
+    <title></title>
+    <!--*-->
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/dahall/vanara/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/dahall/vanara</projectUrl>
+    <!--<iconUrl>64x64 icon</iconUrl>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--*-->
+    <description>$description$</description>
+    <summary>Core library for all Vanara assemblies.</summary>
+    <!--*-->
+    <releaseNotes> </releaseNotes>
+    <copyright>$copyright$</copyright>
+    <language>en-US</language>
+    <tags>pinvoke vanara net-extensions interop</tags>
+  </metadata>
+  <files>
+    <file src="bin\Release\**\*.dll" target="lib" />
+    <file src="**\*.cs" target="src" />
+  </files>
+</package>

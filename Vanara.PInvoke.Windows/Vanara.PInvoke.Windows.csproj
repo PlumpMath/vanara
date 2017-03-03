@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D301624-0B6B-45AA-8203-5360F66BA3B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Vanara.PInvoke.Windows</RootNamespace>
+    <AssemblyName>Vanara.PInvoke.Windows</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComCtl32\Button.cs" />
+    <Compile Include="ComCtl32\ComboBox.cs" />
+    <Compile Include="ComCtl32\ComCtl32.cs" />
+    <Compile Include="ComCtl32\Edit.cs" />
+    <Compile Include="ComCtl32\Header.cs" />
+    <Compile Include="ComCtl32\ImageList.cs" />
+    <Compile Include="ComCtl32\IPAddress.cs" />
+    <Compile Include="ComCtl32\ListView.cs" />
+    <Compile Include="ComCtl32\Progress.cs" />
+    <Compile Include="ComCtl32\Tab.cs" />
+    <Compile Include="ComCtl32\TaskDialog.cs" />
+    <Compile Include="ComCtl32\ToolTip.cs" />
+    <Compile Include="ComCtl32\TreeView.cs" />
+    <Compile Include="CredUI\CREDUI.cs" />
+    <Compile Include="DwmApi\DWMAPI.cs" />
+    <Compile Include="Gdi32\BITMAPINFO.cs" />
+    <Compile Include="Gdi32\BLENDFUNCTION.cs" />
+    <Compile Include="Gdi32\GDI32.cs" />
+    <Compile Include="Gdi32\LOGFONT.cs" />
+    <Compile Include="Gdi32\SafeDCHandles.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shell32\BROWSEINFO.cs" />
+    <Compile Include="Shell32\KnownFolders.cs" />
+    <Compile Include="Shell32\PIDL.cs" />
+    <Compile Include="Shell32\SHELL32.cs" />
+    <Compile Include="Shell32\ShObjIdl.cs" />
+    <Compile Include="User32\ICONINFO.cs" />
+    <Compile Include="User32\USER32.cs" />
+    <Compile Include="User32\User32_WindowMessage.cs" />
+    <Compile Include="User32\User32_WindowStyles.cs" />
+    <Compile Include="UxTheme\UXTHEME.cs" />
+    <Compile Include="UxTheme\UXTHEME_BufferedPaint.cs" />
+    <Compile Include="UxTheme\UXTHEME_GDI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vanara.Core\Vanara.Core.csproj">
+      <Project>{038afeb3-9ce4-4ab8-b0de-4126c5f1d595}</Project>
+      <Name>Vanara.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vanara.PInvoke.Ole\Vanara.PInvoke.Ole.csproj">
+      <Project>{9fb74ef5-9ed0-4efd-91e4-461f04c2d4e8}</Project>
+      <Name>Vanara.PInvoke.Ole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vanara.PInvoke.Security\Vanara.PInvoke.Security.csproj">
+      <Project>{e231e464-432c-4f4e-a44e-71b6f189826e}</Project>
+      <Name>Vanara.PInvoke.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vanara.PInvoke.System\Vanara.PInvoke.System.csproj">
+      <Project>{1f0f4a79-2967-421c-b953-c227d49beead}</Project>
+      <Name>Vanara.PInvoke.System</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="package.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
